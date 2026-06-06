@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Affiliate Ultimate - Single Page</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-100" x-data="{
+ page:'home',
+ dark:false,
+ products:[{"id": 1, "name": "Product 1", "category": "Home", "keyword": "amazon product 1", "badge": "Best Seller"}, {"id": 2, "name": "Product 2", "category": "Gaming", "keyword": "amazon product 2", "badge": "Editor's Choice"}, {"id": 3, "name": "Product 3", "category": "Fitness", "keyword": "amazon product 3", "badge": "Top Pick"}, {"id": 4, "name": "Product 4", "category": "Office", "keyword": "amazon product 4", "badge": "Trending"}, {"id": 5, "name": "Product 5", "category": "Tech", "keyword": "amazon product 5", "badge": "Best Seller"}, {"id": 6, "name": "Product 6", "category": "Home", "keyword": "amazon product 6", "badge": "Editor's Choice"}, {"id": 7, "name": "Product 7", "category": "Gaming", "keyword": "amazon product 7", "badge": "Top Pick"}, {"id": 8, "name": "Product 8", "category": "Fitness", "keyword": "amazon product 8", "badge": "Trending"}, {"id": 9, "name": "Product 9", "category": "Office", "keyword": "amazon product 9", "badge": "Best Seller"}, {"id": 10, "name": "Product 10", "category": "Tech", "keyword": "amazon product 10", "badge": "Editor's Choice"}, {"id": 11, "name": "Product 11", "category": "Home", "keyword": "amazon product 11", "badge": "Top Pick"}, {"id": 12, "name": "Product 12", "category": "Gaming", "keyword": "amazon product 12", "badge": "Trending"}, {"id": 13, "name": "Product 13", "category": "Fitness", "keyword": "amazon product 13", "badge": "Best Seller"}, {"id": 14, "name": "Product 14", "category": "Office", "keyword": "amazon product 14", "badge": "Editor's Choice"}, {"id": 15, "name": "Product 15", "category": "Tech", "keyword": "amazon product 15", "badge": "Top Pick"}, {"id": 16, "name": "Product 16", "category": "Home", "keyword": "amazon product 16", "badge": "Trending"}, {"id": 17, "name": "Product 17", "category": "Gaming", "keyword": "amazon product 17", "badge": "Best Seller"}, {"id": 18, "name": "Product 18", "category": "Fitness", "keyword": "amazon product 18", "badge": "Editor's Choice"}, {"id": 19, "name": "Product 19", "category": "Office", "keyword": "amazon product 19", "badge": "Top Pick"}, {"id": 20, "name": "Product 20", "category": "Tech", "keyword": "amazon product 20", "badge": "Trending"}, {"id": 21, "name": "Product 21", "category": "Home", "keyword": "amazon product 21", "badge": "Best Seller"}, {"id": 22, "name": "Product 22", "category": "Gaming", "keyword": "amazon product 22", "badge": "Editor's Choice"}, {"id": 23, "name": "Product 23", "category": "Fitness", "keyword": "amazon product 23", "badge": "Top Pick"}, {"id": 24, "name": "Product 24", "category": "Office", "keyword": "amazon product 24", "badge": "Trending"}, {"id": 25, "name": "Product 25", "category": "Tech", "keyword": "amazon product 25", "badge": "Best Seller"}, {"id": 26, "name": "Product 26", "category": "Home", "keyword": "amazon product 26", "badge": "Editor's Choice"}, {"id": 27, "name": "Product 27", "category": "Gaming", "keyword": "amazon product 27", "badge": "Top Pick"}, {"id": 28, "name": "Product 28", "category": "Fitness", "keyword": "amazon product 28", "badge": "Trending"}, {"id": 29, "name": "Product 29", "category": "Office", "keyword": "amazon product 29", "badge": "Best Seller"}, {"id": 30, "name": "Product 30", "category": "Tech", "keyword": "amazon product 30", "badge": "Editor's Choice"}, {"id": 31, "name": "Product 31", "category": "Home", "keyword": "amazon product 31", "badge": "Top Pick"}, {"id": 32, "name": "Product 32", "category": "Gaming", "keyword": "amazon product 32", "badge": "Trending"}, {"id": 33, "name": "Product 33", "category": "Fitness", "keyword": "amazon product 33", "badge": "Best Seller"}, {"id": 34, "name": "Product 34", "category": "Office", "keyword": "amazon product 34", "badge": "Editor's Choice"}, {"id": 35, "name": "Product 35", "category": "Tech", "keyword": "amazon product 35", "badge": "Top Pick"}, {"id": 36, "name": "Product 36", "category": "Home", "keyword": "amazon product 36", "badge": "Trending"}, {"id": 37, "name": "Product 37", "category": "Gaming", "keyword": "amazon product 37", "badge": "Best Seller"}, {"id": 38, "name": "Product 38", "category": "Fitness", "keyword": "amazon product 38", "badge": "Editor's Choice"}, {"id": 39, "name": "Product 39", "category": "Office", "keyword": "amazon product 39", "badge": "Top Pick"}, {"id": 40, "name": "Product 40", "category": "Tech", "keyword": "amazon product 40", "badge": "Trending"}, {"id": 41, "name": "Product 41", "category": "Home", "keyword": "amazon product 41", "badge": "Best Seller"}, {"id": 42, "name": "Product 42", "category": "Gaming", "keyword": "amazon product 42", "badge": "Editor's Choice"}, {"id": 43, "name": "Product 43", "category": "Fitness", "keyword": "amazon product 43", "badge": "Top Pick"}, {"id": 44, "name": "Product 44", "category": "Office", "keyword": "amazon product 44", "badge": "Trending"}, {"id": 45, "name": "Product 45", "category": "Tech", "keyword": "amazon product 45", "badge": "Best Seller"}, {"id": 46, "name": "Product 46", "category": "Home", "keyword": "amazon product 46", "badge": "Editor's Choice"}, {"id": 47, "name": "Product 47", "category": "Gaming", "keyword": "amazon product 47", "badge": "Top Pick"}, {"id": 48, "name": "Product 48", "category": "Fitness", "keyword": "amazon product 48", "badge": "Trending"}, {"id": 49, "name": "Product 49", "category": "Office", "keyword": "amazon product 49", "badge": "Best Seller"}, {"id": 50, "name": "Product 50", "category": "Tech", "keyword": "amazon product 50", "badge": "Editor's Choice"}],
+ search:'',
+ favorites: JSON.parse(localStorage.getItem('favorites')||'[]'),
+ compare: JSON.parse(localStorage.getItem('compare')||'[]')
+}">
+
+<nav class="bg-black text-white p-4 flex gap-4 flex-wrap">
+<button @click="page='home'">Home</button>
+<button @click="page='deals'">Deals</button>
+<button @click="page='favorites'">Favorites</button>
+<button @click="page='compare'">Compare</button>
+<button @click="page='faq'">FAQ</button>
+<button @click="page='blog'">Blog</button>
+</nav>
+
+<section x-show="page==='home'" class="p-6">
+<h1 class="text-5xl font-bold mb-4">🔥 Amazon Picks</h1>
+<input x-model="search" placeholder="Search products..." class="border p-2 w-full mb-4">
+
+<div class="grid md:grid-cols-4 gap-4">
+<template x-for="p in products.filter(x=>x.name.toLowerCase().includes(search.toLowerCase()))">
+<div class="bg-white p-4 rounded shadow">
+<div class="text-xs text-orange-600" x-text="p.badge"></div>
+<h3 class="font-bold" x-text="p.name"></h3>
+<p x-text="p.category"></p>
+
+<div class="flex gap-2 mt-2">
+<button class="bg-pink-500 text-white px-2 py-1 rounded"
+@click="favorites.push(p.id); localStorage.setItem('favorites',JSON.stringify(favorites))">
+❤
+</button>
+
+<button class="bg-blue-500 text-white px-2 py-1 rounded"
+@click="compare.push(p.id); localStorage.setItem('compare',JSON.stringify(compare))">
+Compare
+</button>
+</div>
+
+<a class="block mt-3 bg-orange-500 text-white text-center p-2 rounded"
+:href="'https://www.amazon.com/s?k='+encodeURIComponent(p.keyword)+'&tag=stumblely-21'"
+target="_blank" rel="nofollow sponsored">
+View on Amazon
+</a>
+</div>
+</template>
+</div>
+</section>
+
+<section x-show="page==='deals'" class="p-6">
+<h2 class="text-3xl font-bold">Deals</h2>
+<p>⚡ Deal Countdown Active</p>
+</section>
+
+<section x-show="page==='favorites'" class="p-6">
+<h2 class="text-3xl font-bold">Favorites</h2>
+<p x-text="'Saved items: ' + favorites.length"></p>
+</section>
+
+<section x-show="page==='compare'" class="p-6">
+<h2 class="text-3xl font-bold">Compare</h2>
+<p x-text="'Products selected: ' + compare.length"></p>
+</section>
+
+<section x-show="page==='faq'" class="p-6">
+<h2 class="text-3xl font-bold">FAQ</h2>
+<details><summary>Affiliate Disclosure</summary>
+<p>As an Amazon Associate I earn from qualifying purchases.</p>
+</details>
+</section>
+
+<section x-show="page==='blog'" class="p-6">
+<h2 class="text-3xl font-bold">Blog</h2>
+<p>Buying guides and reviews.</p>
+</section>
+
+</body>
+</html>
